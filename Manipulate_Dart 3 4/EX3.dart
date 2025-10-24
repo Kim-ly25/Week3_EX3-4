@@ -49,19 +49,19 @@ void main() {
   var duration1 = CustomDuration.fromHours(2);
   var duration2 = CustomDuration.fromminutes(90);
 
-  print("Duration1: $duration1"); // Output: Duration 1: 2h 0m 0s
-  print("Duration2: $duration2"); // Output: Duration 2: 1h 30m 0s
+  print("Duration1: $duration1"); //Duration 1: 2h 0m 0s
+  print("Duration2: $duration2"); //Duration 2: 1h 30m 0s
 
   // Comparison
-  print("Is Duration 1 greater than Duration 2? ${duration1 > duration2}"); // Output: true
+  print("Is Duration 1 greater than Duration 2? ${duration1 > duration2}"); // true
 
   // Addition
   var sumDuration = duration1 + duration2;
-  print("Sum Duration: $sumDuration"); // Output: Total Duration: 3h 30m 0s
+  print("Sum Duration: $sumDuration"); //Total Duration: 3h 30m 0s
 
   // Subtraction
   var minusDuration = duration1 - duration2;
-  print("Minus Duration: $minusDuration"); // Output: Difference Duration: 0h 30m 0s
+  print("Minus Duration: $minusDuration"); // Duration: 0h 30m 0s
 
   try{
     var invalid = duration2 - duration1;

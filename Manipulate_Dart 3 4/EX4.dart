@@ -46,25 +46,40 @@ class Order {
   }
 }
 void main() {
-  // Sample products
+
   var Pizza = Product('Pizza', 8.5);
   var Chicken = Product('Chicken', 5.0);
   var COCA = Product('COCA', 1.2);
 
-  // Sample order items
+  // order items for Order 1 (Delivery)
   var item1 = OrderItem(Pizza, 4);
   var item2 = OrderItem(Chicken, 2);
   var item3 = OrderItem(COCA, 3);
 
-  // Create an order (delivery)
   var order1 = Order(
     items: [item1, item2, item3],
-    deliveryType: DeliveryType.delivery, 
+    deliveryType: DeliveryType.delivery,
     address: "Phnom Penh, Cambodia",
   );
 
-  // Output
+  // order items for Order 2 (Pickup)
+  var item4 = OrderItem(Pizza, 1);
+  var item5 = OrderItem(COCA, 2);
+
+  var order2 = Order(
+    items: [item4, item5],
+    deliveryType: DeliveryType.pickup,  // No address needed for pickup
+  );
+
+  // Order 1
+  print("=== ORDER 1 ===");
   print("Delivery Method: ${order1.deliveryType.name}");
   print("Delivery Address: ${order1.address}");
   order1.printInvoice();
+
+  print("\n=== ORDER 2 ===");
+  // Order 2
+  print("Delivery Method: ${order2.deliveryType.name}");
+  print("Delivery Address: ${order2.address ?? 'No address (pickup)'}");
+  order2.printInvoice();
 }
